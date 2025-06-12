@@ -43,3 +43,17 @@ function ready() {
     // Agregamos funcionalidad al botón pagar
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked);
 }
+// Eliminamos todos los elementos del carrito y lo ocultamos
+function pagarClicked() {
+    alert("Gracias por la compra");
+    
+    // Eliminamos todos los elementos del carrito
+    var carritoItems = document.getElementsByClassName('carrito-items')[0];
+    while (carritoItems.hasChildNodes()) {
+        carritoItems.removeChild(carritoItems.firstChild);
+    }
+
+    // Actualizamos el total y ocultamos el carrito
+    actualizarTotalCarrito();
+    ocultarCarrito();
+}
