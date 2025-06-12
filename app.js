@@ -57,3 +57,15 @@ function pagarClicked() {
     actualizarTotalCarrito();
     ocultarCarrito();
 }
+// Función que controla el botón clickeado de "Agregar al carrito"
+function agregarAlCarritoClicked(event) {
+    var button = event.target;
+    var item = button.parentElement;
+    
+    var titulo = item.getElementsByClassName('titulo-item')[0].innerText;
+    var precio = item.getElementsByClassName('precio-item')[0].innerText;
+    var imagenSrc = item.getElementsByClassName('img-item')[0].src;
+    
+    agregarItemAlCarrito(titulo, precio, imagenSrc);
+    hacerVisibleCarrito();
+}
