@@ -11,3 +11,35 @@ if (document.readyState == 'loading') {
 function ready() {
     // Aquí después iremos agregando la funcionalidad de los botones
 }
+function ready() {
+    // Agregamos funcionalidad a los botones eliminar del carrito
+    var botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
+    for (var i = 0; i < botonesEliminarItem.length; i++) {
+        var button = botonesEliminarItem[i];
+        button.addEventListener('click', eliminarItemCarrito);
+    }
+
+    // Agregamos funcionalidad al botón sumar cantidad
+    var botonesSumarCantidad = document.getElementsByClassName('sumar-cantidad');
+    for (var i = 0; i < botonesSumarCantidad.length; i++) {
+        var button = botonesSumarCantidad[i];
+        button.addEventListener('click', sumarCantidad);
+    }
+
+    // Agregamos funcionalidad al botón restar cantidad
+    var botonesRestarCantidad = document.getElementsByClassName('restar-cantidad');
+    for (var i = 0; i < botonesRestarCantidad.length; i++) {
+        var button = botonesRestarCantidad[i];
+        button.addEventListener('click', restarCantidad);
+    }
+
+    // Agregamos funcionalidad al botón Agregar al carrito
+    var botonesAgregarAlCarrito = document.getElementsByClassName('boton-item');
+    for (var i = 0; i < botonesAgregarAlCarrito.length; i++) {
+        var button = botonesAgregarAlCarrito[i];
+        button.addEventListener('click', agregarAlCarritoClicked);
+    }
+
+    // Agregamos funcionalidad al botón pagar
+    document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked);
+}
